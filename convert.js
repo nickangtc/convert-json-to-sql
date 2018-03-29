@@ -45,7 +45,14 @@ function convert(input) {
       const pkm = pokemons[i];
 
       // map pokemon data from object into array
-      const values = fields.map((field) => `"${pkm[field]}"`);
+      const values = fields.map((field) => {
+        let value = pkm[field];
+
+        if (typeof field === 'string') {
+          value = value.replace(/'/i, "''");
+        }
+        return `'${value}'`;
+      });
 
       // construct single SQL query
       const formattedSql = `
