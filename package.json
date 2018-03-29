@@ -1,0 +1,9 @@
+{
+  "name": "convert-json-to-sql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "jsonfile": "^4.0.0"
+  }
+}
